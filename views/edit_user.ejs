@@ -1,0 +1,76 @@
+<%- include("layout/header") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto mt-4">
+      <div class="card shadow">
+        <div class="card-header bg-primary">
+          <h5 class="text-light">Edit User</h5>
+        </div>
+        <div class="card-body p-4">
+          <form
+            action="/edit-user/<%= user._id %>"
+            method="post"
+            id="edit-form"
+            enctype="application/x-www-form-urlencoded"
+          >
+            <div class="mb-3">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                class="form-control form-control-lg"
+                value="<%= user.username %>"
+                placeholder="Enter username"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-control form-control-lg"
+                value="<%= user.email %>"
+                placeholder="Enter Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value="<%= user.password %>"
+                class="form-control form-control-lg"
+                placeholder="Enter password"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phoneNumber">Phone</label>
+              <input
+                type="tel"
+                id="phoneNumber"
+                name="phoneNumber"
+                class="form-control form-control-lg"
+                value="<%= user.phoneNumber %>"
+                placeholder="Enter Phone Number"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
